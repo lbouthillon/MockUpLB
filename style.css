@@ -1,0 +1,118 @@
+:root {
+  --neoncolor: #bc13fe;
+  animation: rgb 10s linear infinite;
+}
+
+body {
+  font-family: "Sacramento", sans-serif;
+  background-color: #010a01;
+}
+
+.msg {
+  color: white;
+  padding: 1%;
+}
+
+
+@keyframes rgb {
+  100% {--neoncolor: #fe13d0;}
+  90% {--neoncolor: #bc13fe;}
+  80% {--neoncolor: #012bff;}
+  70% {--neoncolor: #019aff;}
+  60% {--neoncolor: #01f5ff;}
+  50% {--neoncolor: #01ff4a;}
+  40% {--neoncolor: #a9ff01;}
+  30% {--neoncolor: #ffde01;}
+  20% {--neoncolor: #ff9b07;}
+  10% {--neoncolor: #fe133c;} 
+  0% {--neoncolor: #fe13d0;}
+  
+}
+
+@keyframes pulsate {
+
+  100% {
+
+      text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px var(--neoncolor),
+      0 0 80px var(--neoncolor),
+      0 0 90px var(--neoncolor),
+      0 0 100px var(--neoncolor),
+      0 0 150px var(--neoncolor);
+
+  }
+
+  0% {
+
+    text-shadow:
+    0 0 2px #fff,
+    0 0 4px #fff,
+    0 0 6px #fff,
+    0 0 10px var(--neoncolor),
+    0 0 45px var(--neoncolor),
+    0 0 55px var(--neoncolor),
+    0 0 70px var(--neoncolor),
+    0 0 80px var(--neoncolor);
+
+  }
+}
+
+
+#header {
+  color: #fff;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px var(--neoncolor),
+    0 0 82px var(--neoncolor),
+    0 0 92px var(--neoncolor),
+    0 0 102px var(--neoncolor),
+    0 0 151px var(--neoncolor);
+}
+
+
+
+h1 {
+  text-align: center;
+  font-size: 4.2rem;
+  animation: pulsate 1.5s infinite alternate;  
+  border: 0.2rem solid #fff;
+  border-radius: 2rem;
+  padding: 0.4em;
+  box-shadow: 0 0 .2rem #fff,
+            0 0 .2rem #fff,
+            0 0 2rem var(--neoncolor),
+            0 0 0.8rem var(--neoncolor),
+            0 0 1.8rem var(--neoncolor),
+            inset 0 0 1.3rem var(--neoncolor);
+}
+
+
+#newMsgContainer {
+  align-items: center;
+  display : flex; 
+}
+
+.neonborder {
+  padding: 0.4rem;
+  margin: 0.8rem;
+  width: 80%;
+  color : #fff;
+  background-color: black;
+  box-shadow: 0 0 .2rem #fff,
+  0 0 .2rem #fff,
+  0 0 2rem var(--neoncolor),
+  0 0 0.8rem var(--neoncolor),
+  0 0 1.8rem var(--neoncolor),
+  inset 0 0 1.3rem var(--neoncolor);
+}
+
+button {
+  width: 100%;
+  background-color: var(--neoncolor);
+  color: #fff;
+}

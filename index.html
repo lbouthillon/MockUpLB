@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>repl.it</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div id="header">
+    <h1> C'est le Titre ! </h1>
+  </div>
+  <ul id="msgs">
+  </ul>
+  <div id="newMsgContainer">
+    <div>
+      <textarea class="neonborder"> Ecrire un nouveau message ici </textarea>
+      <button onclick="sendMsg(document.querySelector('textarea').value)"> Envoyer le message </button>
+    </div>
+  </div>
+</body>
+<script src=" script.js"></script>
+
+</html>
