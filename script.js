@@ -16,7 +16,9 @@ console.log(applique(fact, [1, 2, 3, 4, 5, 6]));
 
 console.log(applique(function(n) { return (n + 1); }, [1, 2, 3, 4, 5, 6]));
 
-fetch("https://fc99f2bb-d841-4b40-9f55-28d4c0b45a86-00-31tbbii33s1q1.spock.replit.dev/msg/getAll")
+var serverAdress = "http://localhost:8080";
+
+fetch(serverAdress+"/msg/getAll")
   .then(function(response) {
     return response.json();
   }).then(function(liste) {
@@ -47,13 +49,13 @@ function update(msg) {
 }
 
 function sendMsg(msg) {
-  fetch("https://fc99f2bb-d841-4b40-9f55-28d4c0b45a86-00-31tbbii33s1q1.spock.replit.dev/msg/post/" + msg)
+  fetch(serverAdress+"/msg/post/" + msg)
     .then(function(response) {
       return response.json();
 
     })
     .then(function(data) {
-      fetch("https://fc99f2bb-d841-4b40-9f55-28d4c0b45a86-00-31tbbii33s1q1.spock.replit.dev/msg/getAll")
+      fetch(serverAdress+"/msg/getAll")
         .then(function(response) {
           return response.json();
         }).then(function(liste) {
@@ -65,11 +67,11 @@ function sendMsg(msg) {
 }
 
 function delMsg(id) {
-  fetch("https://fc99f2bb-d841-4b40-9f55-28d4c0b45a86-00-31tbbii33s1q1.spock.replit.dev/msg/del/" + id)
+  fetch(serverAdress+"/msg/del/" + id)
     .then(function(response) {
       return response.json();
     }).then(function(data) {
-      fetch("https://fc99f2bb-d841-4b40-9f55-28d4c0b45a86-00-31tbbii33s1q1.spock.replit.dev/msg/getAll")
+      fetch(serverAdress+"/msg/getAll")
         .then(function(response) {
           return response.json();
         }).then(function(liste) {
@@ -78,5 +80,16 @@ function delMsg(id) {
         })
       return 0;
     })
+}
+
+function sendServerAdress(adr) {
+  serverAdress = adr;
+  fetch(serverAdress+"/msg/getAll")
+  .then(function(response) {
+    return response.json();
+  }).then(function(liste) {
+    update(liste);
+    return 0;
+  })
 }
 
