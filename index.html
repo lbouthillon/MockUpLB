@@ -16,12 +16,12 @@
   </ul>
   <div id="newMsgContainer">
     <div>
-      <textarea class="neonborder"> Ecrire un nouveau message ici </textarea>
-      <button onclick="sendMsg(document.querySelector('textarea').value)"> Envoyer le message </button>
+      <textarea class="neonborder" id="msg"> Ecrire un nouveau message ici </textarea>
+      <button onclick="sendMsg(document.querySelector('#msg').value)"> Envoyer le message </button>
     </div>
     <div>
-      <textarea class="neonborder"> Renseigner l'adresse du serveur </textarea>
-      <button onclick="sendServerAdress(document.querySelector('textarea').value)"> Chercher serveur </button>
+      <textarea class="neonborder" id="server"> Renseigner l'adresse du serveur </textarea>
+      <button onclick="sendServerAdress(document.querySelector('#server').value)"> Chercher serveur </button>
     </div>
   </div>
 </body>
